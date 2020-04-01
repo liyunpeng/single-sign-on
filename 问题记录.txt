@@ -1,0 +1,58 @@
+$ find  -name "*.go" | xargs  sed -i 's/github.com\/KenmyZhang\/single-sign-on\//single-sign-on\//g'
+
+
+cmd 有问题
+ligang@sh-ligang MINGW64 /d/goworkspace/single-sign-on (master)
+$ find  -name "*.go" | xargs  sed -i 's/single-sign-on\//sso\//g'
+
+D:\goworkspace\single-sign-on>curl -X POST "http://127.0.0.1:9966/sso/users/phone/signup"  -i -d '{"username":"hesdfdsfotstni","nickname":"mynice","pa
+ssword":"Zhang12345678","verification_code": "666666","mobile":"13544285662"}'curl -X POST "http://127.0.0.1:9966/sso/users/phone/signup"  -i -d '{"us
+ername":"hesdfdsfotstni","nickname":"mynice","password":"Zhang12345678","verification_code": "666666","mobile":"13544285662"}'
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin:
+Content-Type: application/json
+X-Request-Id: fu198eeoojna8m6crkieht9muo
+X-Version-Id: 4.0.0..4c187d7ebc58b054de0954d0a6d43926
+Date: Wed, 01 Apr 2020 03:27:58 GMT
+Content-Length: 160
+
+{"id":"api.context.invalid_body_param.app_error","message":"参数错误","detailed_error":"mobile","request_id":"fu198eeoojna8m6crkieht9muo","status_code":40
+0}curl: (23) Failed writing body (152 != 160)
+curl: (3) [globbing] unmatched close brace/bracket in column 26
+
+gitbash 没问题：
+ligang@sh-ligang MINGW64 /d/goworkspace/single-sign-on (master)
+$ curl -X POST "http://127.0.0.1:9966/sso/users/phone/signup"  -i -d '{"username":"hesdfdsfotstni","nickname":"mynice","password":"Zhang12345678","verification_code": "666666","mobile":"13544285662"}'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   465  100   336  100   129    336    129  0:00:01 --:--:--  0:00:01  454kHTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin:
+Content-Type: application/json
+X-Request-Id: tnqyfa3z8irnmew3icnwbcb5nc
+X-Version-Id: 4.0.0..4c187d7ebc58b054de0954d0a6d43926
+Date: Wed, 01 Apr 2020 03:34:53 GMT
+Content-Length: 336
+
+{"id":"api.user.verified_code.get_token.app_error","message":"api.user.verified_code.get_token.app_error","detailed_error":"GetTokenByExtra: api.user.get_token_by_extra.app_error, SqlTokenStore.GetByExtra: store.sql_recover.get_by_extra.app_error, sql: no rows in result set","request_id":"tnqyfa3z8irnmew3icnwbcb5nc","status_code":500}
+
+
+----------------------
+这个话我不能说。
+
+
+
+你也不发出来， 你发出来，我还在别的上面用。 这样也不浪费。
+
+你在后面说一下这个事
+
+
+
+
+
+
+
+
+
+
+
+
